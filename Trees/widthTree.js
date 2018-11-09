@@ -5,19 +5,19 @@ class WidthTree {
         let max = 0
         let height = this.maxDepthRecursive(root)
         for (let i = 0; i <= height; i++) {
-            let tmp = this.width(root,i)
-            if(tmp >max) max=tmp
+            let tmp = this.width(root, i)
+            if (tmp > max) max = tmp
         }
         return max;
     }
     width(root, depth) {
-        if(!root) 
+        if (!root)
             return 0
         else
-            if(depth==0)
+            if (depth == 0)
                 return 1
             else
-                return width(root.left,depth-1) + this.width(root.right,depth-1)
+                return width(root.left, depth - 1) + this.width(root.right, depth - 1)
     }
     maxDepthRecursive(root) {
         if (!root) return 0
